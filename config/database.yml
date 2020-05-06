@@ -80,6 +80,8 @@ test:
 #
 production:
   <<: *default
-  database: wired_minds_production
-  username: wired_minds
-  password: <%= ENV['WIRED_MINDS_DATABASE_PASSWORD'] %>
+  database: <%= ENV['RDS_DATABASE'] %>
+  username: <%= ENV['RDS_USERNAME'] %>
+  password: <%= ENV['RDS_PASSWORD'] %>
+  host: <%= ENV['RDS_HOST'] %>
+  port: <%= ENV['RDS_PORT'] %>
